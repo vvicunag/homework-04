@@ -12,12 +12,12 @@ var answerNumber = 0;
 var count = 0
 var score = 0
 
-timeLeftEl.textContent = "Time to complete quiz: " + duration;
+timeLeftEl.textContent = "Seconds to complete quiz: " + duration;
 
-var questionPool = ["Country with the highest GDP?", "What is the city with biggest population?", "Excluding the Caspian Sea, what is the lake with the largest surface area?", "Tallest buidling in the world?"];
-var answerPool = ["Germany","USA", "China", "Japan", "New York City", "Shanghai", "Tokyo", "Delhi", "Lake Michigan", "Lake Titicaca", "Lake Superior", "Lake Tanganyika", "Burj Khalifa", "One World Trade Center", "Merdeka 118", "Shangai Tower"];
-var correctAnswers = ["USA", "Tokyo", "Lake Superior", "Burj Khalifa"];
-var wrongAnswers = ["Germany", "China", "Japan", "New York City", "Shanghai", "Delhi", "Lake Michigan", "Lake Titicaca", "Lake Tanganyika", "One World Trade Center", "Merdeka 118", "Shangai Tower"];
+var questionPool = ["Country with the highest GDP?", "What is the city with biggest population?", "Excluding the Caspian Sea, what is the lake with the largest surface area?", "Tallest buidling in the world?", "Which language boasts of having the largest amount of total speakers (native and non-native)?"];
+var answerPool = ["Germany","USA", "China", "Japan", "New York City", "Shanghai", "Tokyo", "Delhi", "Lake Michigan", "Lake Titicaca", "Lake Superior", "Lake Tanganyika", "Burj Khalifa", "One World Trade Center", "Merdeka 118", "Shangai Tower", "Mandarin Chinese", "English", "Spanish", "Hindi"];
+var correctAnswers = ["USA", "Tokyo", "Lake Superior", "Burj Khalifa", "English"];
+var wrongAnswers = ["Germany", "China", "Japan", "New York City", "Shanghai", "Delhi", "Lake Michigan", "Lake Titicaca", "Lake Tanganyika", "One World Trade Center", "Merdeka 118", "Shangai Tower", "Mandarin Chinese", "Spanish", "Hindi"];
 
 
 // question and answer display
@@ -55,12 +55,12 @@ function nextQuestion() {
 
 // function will start timer, and allow for player to choose answer to first question
 function startGame() {
-    timeLeftEl.textContent = "Time LEFT: " + duration;
+    timeLeftEl.textContent = "Seconds LEFT: " + duration;
     document.addEventListener("click", didYouGuess)
     //start timer
     var timer = setInterval(function() {
         count++;
-        timeLeftEl.textContent = "Time LEFT: " + (duration - count);
+        timeLeftEl.textContent = "Seconds LEFT: " + (duration - count);
         if(count >= duration) {
             clearInterval(timer)
         }

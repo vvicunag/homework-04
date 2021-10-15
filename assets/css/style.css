@@ -15,9 +15,21 @@ h1 {
     box-shadow: inset 0px 0px 8px white, 0 0 15px black;
 }
 
+#score-button-container {
+    width: 685px;
+    background-color: rgb(179, 173, 173);
+    margin-bottom: 1%;
+    padding: 8px;
+    box-shadow: inset 0px 0px 8px white, 0 0 15px black;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    font-size: x-large;
+}
+
 #question-container {
     width: 700px;
-    height: 400px;
+    height: 370px;
     background-color: rgb(179, 173, 173);
     border-radius: 15px;
     display: flex;
@@ -35,7 +47,7 @@ h1 {
     color: white;
     border: solid gray;
     border-width: 5px;
-    box-shadow: inset 0px 0px 8px black, 0 0 15px black;
+    box-shadow: inset 0px 0px 8px white, 0 0 15px black;
 }
 
 #quiz-question {
@@ -52,10 +64,17 @@ h1 {
     background-color: rgb(6, 94, 153);
     text-align: center;
     border-radius: 10px;
-    box-shadow: 3px 3px 3px black;
+    box-shadow: inset 0px 0px 8px white, 0 0 15px black;
     padding: 20px;
     list-style: none;
     width: 100px;
+}
+
+#correct-wrong {
+    color: red;
+    font-size: xx-large;
+    position: relative;
+    margin-top: -3%;
 }
 
 
