@@ -1,0 +1,68 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("/assets/images/world\ map\ small.jpg");
+}
+
+h1 {
+    color: white;
+    background-color: rgb(0, 68, 124);
+    width: 99%;
+    text-align: center;
+    padding: 10px;
+    box-shadow: inset 0px 0px 8px white, 0 0 15px black;
+}
+
+#question-container {
+    width: 700px;
+    height: 400px;
+    background-color: rgb(179, 173, 173);
+    border-radius: 15px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: inset 0px 0px 8px white, 0 0 15px black;
+}
+
+#start-game {
+    border-radius: 300px;
+    width: 100px;
+    height: 100px;
+    font-size: x-large;
+    background-color: green;
+    color: white;
+    border: solid gray;
+    border-width: 5px;
+    box-shadow: inset 0px 0px 8px black, 0 0 15px black;
+}
+
+#quiz-question {
+    font-size: x-large;
+    color: white;
+    padding: 15px;
+    font-weight: 400;
+}
+
+.quizz-answers {
+    color: white;
+    margin: 15px 30px 10px 10px;
+    border: yellowgreen;
+    background-color: rgb(6, 94, 153);
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px black;
+    padding: 20px;
+    list-style: none;
+    width: 100px;
+}
+
+
+.quizz-answers:hover  {
+    box-shadow: inset 0px 0px 8px white, 0 0 15px white;
+}
+
+#start-game:hover {
+    box-shadow: inset 0px 0px 8px red, 0 0 15px red;
+}
