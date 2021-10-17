@@ -9,10 +9,23 @@
       <h1>Welcome to the Wordly World QUIZ!</h1>
       <div id = "score-button-container">
         <button id = "start-game">START</button>
-        <p id="time-left"></p>
+        <div>
+          <p id="time-left"></p>
+          <p id = "scorecard"></p>
+          <p id = "last-player"></p>
+        </div>
       </div>
     <div id="question-container">
       <p id = "quiz-question"></p>
+      
+      <div id = "submit-score-container">
+        <p id="your-score"></p>
+        <form method="POST">
+          <label id = "name-label" for="first-name">CONGRATULATIONS ON FINISHING THE QUIZ! Enter your name to enter the Wordly World Hall of Fame!</label>
+          <input type="text" name="name-input" id="name" placeholder="Jane Doe" />
+          <button id= "submit-button">SUBMIT FOR GLORY!</button>
+        </form>
+      </div>
       <ul>
         <li class = "quizz-answers" id = "o1"></li>
         <li class = "quizz-answers" id = "o2"></li>
@@ -22,5 +35,6 @@
     </div>
     <h3 id = "correct-wrong"></h3>
     <script src="assets/javascript/script.js"></script>
+  
   </body>
 </html>

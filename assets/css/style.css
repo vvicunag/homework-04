@@ -22,9 +22,10 @@ h1 {
     padding: 8px;
     box-shadow: inset 0px 0px 8px white, 0 0 15px black;
     border-radius: 15px;
-    text-align: center;
     color: white;
     font-size: x-large;
+    display: flex;
+    justify-content: space-around;
 }
 
 #question-container {
@@ -48,6 +49,8 @@ h1 {
     border: solid gray;
     border-width: 5px;
     box-shadow: inset 0px 0px 8px white, 0 0 15px black;
+    position: relative;
+    margin-top: 5%;
 }
 
 #quiz-question {
@@ -84,4 +87,8 @@ h1 {
 
 #start-game:hover {
     box-shadow: inset 0px 0px 8px red, 0 0 15px red;
+}
+
+#submit-score-container {
+    display: none;
 }
