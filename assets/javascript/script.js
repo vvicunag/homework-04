@@ -11,16 +11,15 @@ var quizOption2 = document.querySelector("#o2");
 var quizOption3 = document.querySelector("#o3");
 var quizOption4 = document.querySelector("#o4");
 var nameInput = document.querySelector("#name-input");
-var submitButton = document.querySelector("#submit-button");
 // tunable variables
-var duration = 60;
+var duration = 45;
 var totalNumberOfQuestions = 5
 var questionNumber = 0;
 var answerNumber = 0;
 var count = 0
 var score = 0
 
-
+//Score and timer display
 timeLeftEl.textContent = "Seconds to complete quiz: " + duration;
 scoreCard.textContent = "Current score: " + score;
 yourScore.textContent = "YOUR SCORE:" + score
@@ -51,24 +50,22 @@ function startGame() {
     var timer = setInterval(function() {
         count++;
         timeLeftEl.textContent = "Seconds LEFT: " + (duration - count);
+        // If timer expires, interval is cleared
         if(count >= duration) {
-            clearInterval(timer)
-        }
-        //Clears timer when all questions are answered.
-        else if (questionNumber >= totalNumberOfQuestions) {
             clearInterval(timer);
-            yourScore.textContent = "YOUR SCORE:" + score;
-            userName = prompt ("Congratulations on finishing the quiz! Enter your name to enter the Wordly World Hall of Fame!");
+            //Allows for the player to submit its name and score
+            userName = prompt ("You did not finish the quiz! Enter your name to enter the Wordly World Hall of SHAME!");
             savedGame = userName + ". Score: " + score;
             localStorage.setItem("userInfo", savedGame);
             var displayLast = localStorage.getItem("userInfo");
             lastPlayer.textContent = "Last player: " + displayLast;
+            // Resets the game
             questionNumber = 0;
             answerNumber = 0;
             answerNumber = 0;
             answerNumber = 0;
             answerNumber = 0;
-            duration = 60;
+            duration = 45;
             count = 0
             score = 0
             quizQuestion.textContent = questionPool[questionNumber];
@@ -81,12 +78,41 @@ function startGame() {
             correctWrong.textContent = null;
             document.removeEventListener("click", didYouGuess);
             startButton.addEventListener("click", startGame);
-            
+        }
+        //Clears timer when all questions are answered / When interval is cleared, it also , and resets the game automaticlly.
+        else if (questionNumber >= totalNumberOfQuestions) {
+            clearInterval(timer);
+            yourScore.textContent = "YOUR SCORE:" + score;
+            //Allows for the player to submit its name and score
+            userName = prompt ("Congratulations on finishing the quiz! Enter your name to enter the Wordly World Hall of Fame!");
+            savedGame = userName + ". Score: " + score;
+            localStorage.setItem("userInfo", savedGame);
+            var displayLast = localStorage.getItem("userInfo");
+            lastPlayer.textContent = "Last player: " + displayLast;
+            // Resets the game
+            questionNumber = 0;
+            answerNumber = 0;
+            answerNumber = 0;
+            answerNumber = 0;
+            answerNumber = 0;
+            duration = 45;
+            count = 0
+            score = 0
+            quizQuestion.textContent = questionPool[questionNumber];
+            quizOption1.textContent = answerPool[answerNumber];
+            quizOption2.textContent = answerPool[answerNumber+1];
+            quizOption3.textContent = answerPool[answerNumber+2];
+            quizOption4.textContent = answerPool[answerNumber+3];
+            timeLeftEl.textContent = "Seconds LEFT: " + (duration - count);
+            scoreCard.textContent = "Current score: " + score;
+            correctWrong.textContent = null;
+            document.removeEventListener("click", didYouGuess);
+            startButton.addEventListener("click", startGame);  
         }
     }, 1000); 
 }
 
-// when  answer is selected message is displayed. Function also adds score.
+// when  answer is selected message is displayed. Function also adds score and calls the next question.
 function didYouGuess(event) {
     var chosenOption = event.target.innerHTML;
     if(correctAnswers.includes(chosenOption)) {
@@ -116,5 +142,5 @@ function nextQuestion() {
     quizOption4.textContent = answerPool[answerNumber+3];
 }
 
-
+//Event listener enables the start button
 startButton.addEventListener("click", startGame);
